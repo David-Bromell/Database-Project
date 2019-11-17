@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 16, 2019 at 02:34 PM
+-- Generation Time: Nov 17, 2019 at 01:26 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -68,7 +68,21 @@ CREATE TABLE IF NOT EXISTS `album` (
   `Artist_ID` int(10) DEFAULT NULL,
   PRIMARY KEY (`Album_ID`),
   KEY `Artist_ID` (`Artist_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `album`
+--
+
+INSERT INTO `album` (`Album_ID`, `album_name`, `album_length`, `explicit_`, `Artist_ID`) VALUES
+(1, 'Bullet Tip', '00:00:36', 'N', 2),
+(2, 'Life 2.0', '00:00:47', 'Y', 1),
+(3, 'Seven', '00:00:33', 'N', 3),
+(4, 'Evolve', '00:00:41', 'Y', 11),
+(5, 'Sorry For Party Rocking', '00:00:51', 'Y', 10),
+(6, 'Animal + Cannibal', '00:00:28', 'N', 5),
+(7, 'No. 6 Collaborations', '00:00:31', 'Y', 6),
+(8, 'Revival', '00:00:56', 'Y', 7);
 
 -- --------------------------------------------------------
 
@@ -117,7 +131,20 @@ CREATE TABLE IF NOT EXISTS `cd` (
   `quantity` int(10) DEFAULT NULL,
   PRIMARY KEY (`CD_ID`),
   KEY `record_label_id` (`record_label_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cd`
+--
+
+INSERT INTO `cd` (`CD_ID`, `cd_title`, `explicit`, `record_label_id`, `quantity`) VALUES
+(1, 'Now that’s what I call Music 89', 'Y', 1, 30000),
+(2, 'Irish Chart Toppers 2019', 'N', 2, 20000),
+(3, 'Running music megaMix', 'Y', 3, 20000),
+(4, 'MTV Club Anthems', 'Y', 4, 120000),
+(5, 'Irish Chart Toppers 2019', 'N', 11, 20000),
+(6, 'New York Noize', 'N', 13, 20000),
+(7, 'ChartToppers megaMix 2019', 'N', 9, 36000);
 
 -- --------------------------------------------------------
 
@@ -233,7 +260,20 @@ CREATE TABLE IF NOT EXISTS `single` (
   KEY `genre_id` (`genre_id`),
   KEY `album_id` (`album_id`),
   KEY `CD_ID` (`CD_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `single`
+--
+
+INSERT INTO `single` (`Song_ID`, `song_name`, `song_length`, `explicit_`, `Artist_ID`, `genre_id`, `album_id`, `CD_ID`) VALUES
+(1, 'Memories', '00:00:04', 'Y', 3, 1, NULL, 1),
+(2, 'Believer', '00:00:04', 'N', 11, 1, 4, 2),
+(3, 'Thunder', '00:00:04', 'N', 11, 1, 4, 2),
+(4, 'Whatever It Takes', '00:00:04', 'N', 11, 1, 4, 2),
+(5, 'Battle', '00:00:03', 'N', 3, 4, 3, 3),
+(6, 'Say My Name', '00:00:03', 'Y', 3, 4, 3, 3),
+(7, 'Freedom', '00:00:04', 'N', 3, 4, 3, 3);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
