@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 23, 2019 at 01:50 PM
+-- Generation Time: Nov 23, 2019 at 02:14 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -21,6 +21,17 @@ SET time_zone = "+00:00";
 --
 -- Database: `database assignment`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+DROP PROCEDURE IF EXISTS `myProcedure`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `myProcedure` (IN `Job` VARCHAR(30))  BEGIN
+select name from employee where department=job;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -67,7 +78,8 @@ CREATE TABLE IF NOT EXISTS `album` (
   `explicit_` varchar(255) DEFAULT NULL,
   `Artist_ID` int(10) DEFAULT NULL,
   PRIMARY KEY (`Album_ID`),
-  KEY `Artist_ID` (`Artist_ID`)
+  KEY `Artist_ID` (`Artist_ID`),
+  KEY `album_ind` (`album_length`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
@@ -176,7 +188,9 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `department` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`Employee_ID`),
   UNIQUE KEY `myconstraint` (`mobile`),
-  KEY `Record_Label_ID` (`Record_Label_ID`)
+  KEY `Record_Label_ID` (`Record_Label_ID`),
+  KEY `employee_index` (`age`),
+  KEY `employee_ind` (`age`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
@@ -286,7 +300,8 @@ CREATE TABLE IF NOT EXISTS `single` (
   KEY `Artist_ID` (`Artist_ID`),
   KEY `genre_id` (`genre_id`),
   KEY `album_id` (`album_id`),
-  KEY `CD_ID` (`CD_ID`)
+  KEY `CD_ID` (`CD_ID`),
+  KEY `single_ind` (`explicit_`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
