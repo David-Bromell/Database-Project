@@ -5,8 +5,13 @@ FROM employee;
 WHERE (department = 'Legal');
 
 
+--Trigger
+
+Select * FROM artist WHERE artist_id IN (SELECT artist_id FROM single)
+
 
 --Harder function -- this is the fucntion that uses a 2 table join
+
 SELECT recordlabel.label_name, address.country_name
 FROM recordlabel
 INNER JOIN address
@@ -45,4 +50,12 @@ END
 CREATE PROCEDURE SelectAllCEO @Job nvarchar(30)
 AS
 SELECT * FROM employee WHERE department = @Job
+GO;
+
+
+
+
+CREATE PROCEDURE SelectAllCustomers
+AS
+SELECT * FROM Customers
 GO;
