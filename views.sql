@@ -9,7 +9,7 @@ SELECT name, age, department
 FROM employee;
 
 CREATE INDEX employee_index
-ON employee_public(age);
+ON employee(age);
 
 SELECT age
 FROM employee_public
@@ -25,7 +25,7 @@ SELECT song_name, song_length, explicit_
 FROM single;
 
 CREATE INDEX single_index
-ON single(explicit);
+ON single(explicit_);
 
 SELECT explicit_
 FROM single_public
