@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 23, 2019 at 02:14 PM
+-- Generation Time: Nov 23, 2019 at 03:12 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -87,14 +87,14 @@ CREATE TABLE IF NOT EXISTS `album` (
 --
 
 INSERT INTO `album` (`Album_ID`, `album_name`, `album_length`, `explicit_`, `Artist_ID`) VALUES
-(1, 'Bullet Tip', '00:00:36', 'N', 2),
-(2, 'Life 2.0', '00:00:47', 'Y', 1),
-(3, 'Seven', '00:00:33', 'N', 3),
-(4, 'Evolve', '00:00:41', 'Y', 11),
-(5, 'Sorry For Party Rocking', '00:00:51', 'Y', 10),
-(6, 'Animal + Cannibal', '00:00:28', 'N', 5),
-(7, 'No. 6 Collaborations', '00:00:31', 'Y', 6),
-(8, 'Revival', '00:00:56', 'Y', 7);
+(1, 'Bullet Tip', '24:23:00', 'N', 2),
+(2, 'Life 2.0', '36:27:00', 'Y', 1),
+(3, 'Seven', '18:47:00', 'N', 3),
+(4, 'Evolve', '31:08:00', 'Y', 11),
+(5, 'Sorry For Party Rocking', '23:56:00', 'Y', 10),
+(6, 'Animal + Cannibal', '24:00:00', 'N', 5),
+(7, 'No. 6 Collaborations', '13:23:00', 'Y', 6),
+(8, 'Revival', '41:14:00', 'Y', 7);
 
 -- --------------------------------------------------------
 
