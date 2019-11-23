@@ -34,8 +34,6 @@ NEW.character_name = UPPER(new.character_name);
 
 
 --
-ALTER TABLE employee ADD CONSTRAINT myconstraint UNIQUE(mobile)
---
 
 CREATE PROCEDURE
 AS
