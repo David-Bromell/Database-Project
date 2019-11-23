@@ -8,7 +8,7 @@ CREATE VIEW employee_public AS
 SELECT name, age, department
 FROM employee;
 
-CREATE UNIQUE INDEX employee_index
+CREATE INDEX employee_index
 ON employee_public(age);
 
 SELECT age
@@ -43,4 +43,4 @@ ON album(album_length);
 SELECT album_length
 FROM album_public
 GROUP BY album_length
-HAVING(album_length>=30); 
+HAVING(album_length>=30);
