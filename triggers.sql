@@ -59,3 +59,18 @@ CREATE PROCEDURE SelectAllCustomers
 AS
 SELECT * FROM Customers
 GO;
+
+--2nd trigger which adds country code to a mobile number based on the country of the employee
+/*
+CREATE TRIGGER country_code AFTER UPDATE on employee
+FOR EACH ROW
+SELECT address.country_name, CONCAT(
+ IF(address.country_name = 'USA', '+1',''),
+ IF(address.country_name = 'UK', '+44',''),
+ IF(address.country_name = 'Netherlands', '+31',''),
+ IF(address.country_name = 'Germany', '+27',''),
+ IF(address.country_name = 'Ireland', '+353',''),
+    employee.mobile) AS mobileno
+FROM address
+INNER JOIN employee ON address.Record_Label_ID = employee.record_label_id
+*/
